@@ -7,7 +7,6 @@ html, body, .bodyContainer {
 html {
   background-color: #E6EFF5;
 
-
 }
 
 body {
@@ -25,17 +24,14 @@ body {
 
 .angry-grid {
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
 }
 
 #item-0 {
   background-color: #FFFFFF;
-  grid-row-start: 1;
-  grid-column-start: 1;
-  grid-row-end: 2;
-  grid-column-end: 3;
+  grid-column: span 2;
   padding: 40px 40px;
 }
 
@@ -201,31 +197,59 @@ button span {
   --font-family: "Karla", sans-serif;
 }
 
-@media only screen and (max-width: 768px) {
-  .angry-grid {
-    grid-template-columns: 1fr; /* Change to 1 column */
-    grid-template-rows: auto; /* Change to auto to fit content */
+@media only screen and (max-width: 600px) {
+  body {
+    min-height: 50vh;
+
+
   }
 
-  /* Set each item to span across all columns */
-  #item-0 {
-    grid-row: span 2; /* Make item-0 span 2 rows */
-    grid-column: 1; /* Place item-0 in the first column */
+  .angry-grid {
+    display: flex;
+    flex-direction: column;
+    background-color: #2BB3B0;
+    height: 100vh;
+    min-width: fit-content;
 
+  }
+
+  #item-0 {
+
+  }
+
+  #item-0 p {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    max-width: 80vw;
+  }
+
+  #item-0 h2 {
+    max-width: 80vw;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #item-0 h3 {
+    max-width: 80vw;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #item-1 {
-    grid-row: 3; /* Place item-1 in the third row */
-    grid-column: 1; /* Place item-1 in the first column */
+    margin-left: auto;
+    margin-right: auto;
   }
 
   #item-2 {
-    grid-row: 4; /* Place item-2 in the fourth row */
-    grid-column: 1; /* Place item-2 in the first column */
 
+    margin-left: auto;
+    margin-right: auto;
   }
-
 }
+
 
 
 
